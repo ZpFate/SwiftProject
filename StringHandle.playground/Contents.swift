@@ -47,7 +47,9 @@ let greeting = "Guten  Tag!"
 /// 第一个字符
 greeting[greeting.startIndex]
 /// 最后一个字符
+// ********** endIndex是字符串中最后一个字符后面的位置 ***********
 //greeting[greeting.endIndex]
+
 /// 倒数第二个字符
 greeting[greeting.index(before: greeting.endIndex)]
 /// 第二个字符
@@ -61,5 +63,27 @@ welcome.insert("1", at: welcome.endIndex)
 /// 插入字符串
 welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex))
 
+/// 移除字符串
+welcome.remove(at: welcome.index(before: welcome.endIndex))
+print(welcome)
+/// 移除一段字符串
+let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+welcome.removeSubrange(range)
+print(welcome)
 
+/// 子字符串
+/// 使用下标或者类似prefix(_:)的方法得到的字符串是Substring类型
+/// Substring拥有String的大部分方法, Substring可以转为String
+/// Substring是为了内存考虑,在更改或者使用String初始化Substring之前, Substring都指向原来的内存
+
+let newWelcome = "hello, world!"
+
+
+
+/// String和Substring都遵循StringProtocol协议
+/// 在日常工作中, 需要一些定义字符串的操作函数,参数使用StringProtocol, 这样可以同时使用String和Substring
+
+/// 字符串相等于不等 == 和 !=
+/// 前缀相等性 hasPrefix(_:)
+/// 后缀相等性 hasSuffix(_:)
 
