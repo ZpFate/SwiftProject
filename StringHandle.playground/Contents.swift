@@ -87,3 +87,9 @@ let newWelcome = "hello, world!"
 /// 前缀相等性 hasPrefix(_:)
 /// 后缀相等性 hasSuffix(_:)
 
+
+///
+/**   ****Swift String为什么不可以使用下标形式进行操作和访问****
+ /
+ *
+ */
