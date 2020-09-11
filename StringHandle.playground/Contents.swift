@@ -5,6 +5,12 @@ if emptyString.isEmpty {
 //    print("emptyString is empty")
 }
 
+let str = "abc"
+print("str is \(str)")
+let str1: String = "abc"
+
+let str2: String? = "abc"
+
 let numbers = """
 1
 2
@@ -16,6 +22,7 @@ let numbers = """
 /// 字符串插值 \(), 类似[NSString stringWithFormat:@""]
 print("numbers === \(numbers)")
 
+print("6 times 7 is \(6 * 7).")
 
 print(#"6 times 7 is \(6 * 7)."#)
 /// 在反斜杠后面添加与首尾同等数量的井号 使插值生效
@@ -37,10 +44,10 @@ welcomeVar += "World"
 
 print(#"#\n\t"#)
 
-let string = "hello, world"
-for c in string {
-    print(c)
-}
+//let string = "hello, world"
+//for c in string {
+//    print(c)
+//}
 
 
 let greeting = "Guten  Tag!"
@@ -50,7 +57,7 @@ greeting[greeting.startIndex]
 // ********** endIndex是字符串中最后一个字符后面的位置 ***********
 //greeting[greeting.endIndex]
 
-/// 倒数第二个字符
+/// 最后一个字符
 greeting[greeting.index(before: greeting.endIndex)]
 /// 第二个字符
 greeting[greeting.index(after: greeting.startIndex)]
@@ -93,3 +100,18 @@ let newWelcome = "hello, world!"
  /
  *
  */
+/// 获取子字符串
+
+var title: String = "Hello, world!"
+title.prefix(5)
+title.suffix(6)
+
+title.substring(with: title.index(title.endIndex, offsetBy: -5)..<title.endIndex)
+
+
+
+let decomposed = "\u{1100}\u{1161}" // ᄀ + ᅡ
+let precomposed = "\u{AC00}" // 가
+if decomposed == precomposed {
+    print("decomposed == precomposed")
+}
